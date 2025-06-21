@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background-color: #fffaf7;
+}
+
+.chat-wrapper {
+  background-image: url("BG1.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.background-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.fumu-container img {
+  width: 200px;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.bubble {
+  max-width: 300px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 #fff;
+}
+
+.controls {
+  margin-bottom: 1.5rem;
+}
+
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.chat-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: none;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #ffb6b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #ff9999;
+}
+
+@media screen and (max-width: 500px) {
+  .fumu-container img {
+    width: 150px;
+  }
+
+  .bubble {
+    max-width: 80%;
+    font-size: 1rem;
+  }
+
+  textarea {
+    height: 60px;
+  }
+}
