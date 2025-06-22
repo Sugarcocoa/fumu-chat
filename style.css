@@ -25,11 +25,28 @@ body {
 }
 
 .chat-area {
+  width: 100%;
+  max-width: 500px;
+  height: 60vh;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.fumu-container, .user-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 80%;
+}
+
+.user-container {
+  align-self: flex-end;
+  flex-direction: row-reverse;
 }
 
 .fumu-container img {
@@ -38,27 +55,50 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.fumu-container .bubble {
+  background: #fff;
+}
+
+.user-container .bubble {
+  background: #d9fdd3;
+}
+
 .bubble {
   max-width: 300px;
-  background: #fff;
   padding: 1rem;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-top: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   font-size: 1.1rem;
   position: relative;
+  word-wrap: break-word;
+}
+
+.fumu-container .bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+  transform: rotate(10deg);
+}
+
+.user-container .bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #d9fdd3;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  transform: rotate(-10deg);
 }
 
 .bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 30px;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 5px 5px 0 #fff;
+  content: none;
 }
 
 .controls {
